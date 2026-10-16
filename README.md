@@ -46,6 +46,24 @@ $client->logger($logger);
 
 Complete each fetch promptly; the agent holds decrypted material under a short lease (see host-env-vault docs).
 
+### CLI
+
+After `composer install`, `vendor/bin/fetch-runtime-secret` fetches one runtime entry. Pass the socket or runtime directory explicitly (no environment-variable defaults):
+
+```bash
+fetch-runtime-secret \
+  --entry API_SECRET \
+  --runtime-dir /run/host-env-vault \
+  --profile app-worker
+
+fetch-runtime-secret \
+  --entry signing.pem \
+  --file \
+  --socket /run/host-env-vault/sockets/app-worker.sock
+```
+
+Secret bytes are written to stdout (for scripts and entrypoints).
+
 ## Wire format
 
 Matches host-env-vault `serve`:
@@ -64,4 +82,4 @@ composer install
 composer test
 ```
 
-Coverage and mutation gates follow the ORK4 development rules (`docs/reference/milestones.md`).
+See `docs/reference/milestones.md` for coverage and mutation targets on this repo.
