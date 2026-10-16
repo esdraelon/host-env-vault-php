@@ -1,0 +1,38 @@
+{
+    "name": "amtgard/host-env-vault",
+    "description": "Runtime-mode unix socket client for host-env-vault profiles.",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/esdraelon/host-env-vault-php",
+    "require": {
+        "php": "^8.4",
+        "ext-sockets": "*",
+        "amtgard/builder-traits": "^2.0",
+        "jedibc/optional": "^1.0",
+        "psr/log": "^3.0"
+    },
+    "require-dev": {
+        "infection/infection": "^0.29",
+        "monolog/monolog": "^3.7",
+        "phpunit/phpunit": "^11.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Amtgard\\HostEnvVault\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Amtgard\\HostEnvVault\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "infection/extension-installer": true
+        }
+    }
+}
