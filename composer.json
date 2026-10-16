@@ -4,6 +4,9 @@
     "type": "library",
     "license": "MIT",
     "homepage": "https://github.com/esdraelon/host-env-vault-php",
+    "bin": [
+        "bin/fetch-runtime-secret"
+    ],
     "require": {
         "php": "^8.4",
         "ext-sockets": "*",
